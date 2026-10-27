@@ -1,44 +1,41 @@
-# Little Paws — Initial structure
+# Little Paws — Beginner website
 
-This is the first, basic version of a small animal website built with HTML and CSS.
+This is a small animal website built with HTML, CSS and a little JavaScript.
 
 ## Current progress
 
-- Four pages with working navigation.
+- Four linked pages: home, animals, pet care and quiz.
 - A welcome page with a local cat photograph.
 - Short introductions to cats and dogs.
 - A basic pet-care list.
-- A draft quiz question with a link back to the animal guide.
-- Simple shared styles, flexible navigation and a responsive image.
+- A quiz with answer choices and immediate feedback.
+- Shared styles, flexible navigation and a responsive image.
 
-The quiz is text only at this stage. JavaScript answer checking, a care checklist and the final layout have not been added.
+The interactive quiz is the second improvement to this project. More animal profiles, a care checklist and layout improvements can be added as later changes.
 
 ## Open locally
 
-Open `index.html` in a browser, or use the Live Server extension in VS Code.
+Open index.html in a browser, or use the Live Server extension in VS Code.
 
 ## Possible next steps
 
-- Rewrite and expand the animal descriptions after checking reliable sources.
-- Add rabbit and hamster information.
+- Add rabbit and hamster profiles after checking reliable facts.
 - Improve the layout and test it at phone widths.
-- Add quiz answer choices and JavaScript feedback.
 - Add a pet-care checklist.
 - Publish the website with GitHub Pages.
 
 ## 中文说明
 
-这是供第一次提交使用的基础版本。网页包含基本内容和导航，还没有测验答题功能、清单保存或完整版本的卡片排版。
+这是一个逐步完成的网站项目。当前版本有四个页面、基本导航和一个可选择答案的小测验。清单、更多动物资料和版式改进可以留给后续版本。
 
-可以先打开首页查看，再读一遍代码，按自己的想法改写部分文字。后续实际完成哪一项改进，就提交哪一项。这个初始版本及之后的提交应如实反映开发进展。
+第二阶段的改动给小测验添加了选项、JavaScript 判题和即时反馈。理解并实际检查本次修改后，可以在 VS Code 终端中分别运行下面的命令：
 
-第一条提交说明可以写：`Add basic pages and navigation`。
+git add quiz.html quiz.js styles.css README.md
 
-注意：当前文件夹上层的桌面目录也是一个 Git 工作区。提交前请确认 VS Code 显示的仓库根目录是 `web.homework`，避免把桌面的其他文件一起提交。若还没有独立仓库，可在 PowerShell 运行：
+git commit -m "Add interactive animal quiz"
 
-```powershell
-git init -b main -- .
-git rev-parse --show-toplevel
-```
+git push
 
-确认输出以 `web.homework` 结尾后，再在 VS Code 的源代码管理中查看和提交这些文件。
+每次提交都应对应自己实际完成并检查的修改，不要把同一项工作拆成虚假的记录。
+
+第一次提交时已在本文件夹建立独立仓库。提交前请确认 VS Code 打开的仓库根目录是 web.homework，并在源代码管理中检查本次改动。

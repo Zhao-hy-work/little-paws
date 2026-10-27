@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Quiz | Little Paws</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="quiz.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -20,12 +21,28 @@
 
   <main id="main">
     <h1>Animal quiz</h1>
-    <p>A question to think about after reading the animal guide:</p>
+    <p>Pick an answer and check what you know about cats and dogs.</p>
 
-    <h2>Which pet often likes climbing and resting in high places?</h2>
-    <p>Is it a cat or a dog?</p>
-    <p><a href="animals.html">Read the animal guide for a clue.</a></p>
-    <!-- Next step: add answer choices and JavaScript feedback. -->
+    <form class="quiz-card" id="animal-quiz">
+      <fieldset>
+        <legend>Which pet often likes climbing and resting in high places?</legend>
+
+        <label class="quiz-option">
+          <input type="radio" name="answer" value="cat">
+          <span>A cat</span>
+        </label>
+
+        <label class="quiz-option">
+          <input type="radio" name="answer" value="dog">
+          <span>A dog</span>
+        </label>
+      </fieldset>
+
+      <button class="quiz-button" type="submit">Check my answer</button>
+      <p class="quiz-result" id="quiz-result" role="status" aria-live="polite">Your answer will appear here.</p>
+    </form>
+
+    <p><a href="animals.html">Read the animal guide for more information.</a></p>
   </main>
 
   <footer>
