@@ -1,45 +1,51 @@
 # Little Paws — Beginner website
 
-This is a small animal website built with HTML, CSS and a little JavaScript.
-
-## Current progress
-
-- Four linked pages: home, animals, pet care and quiz.
-- A welcome page with a local cat photograph.
-- Profiles of cats, dogs, rabbits and hamsters, including activities and care tips.
-- Animal cards in two columns on larger screens and one column on phones.
-- Links from the animal guide to the care page, quiz and RSPCA pet-care guides.
-- A basic pet-care list.
-- A quiz with answer choices and immediate feedback.
-
-## Open locally
-
-Open `index.html` in a browser, or use the Live Server extension in VS Code.
+An English animal website made with plain HTML, CSS and JavaScript. Open index.html in a browser or use VS Code Live Server. No build step, database or external JavaScript libraries are needed.
 
 ## Five development stages
 
-1. Basic pages, shared styles and navigation — completed.
-2. Interactive animal quiz — completed.
-3. Expanded animal guide and responsive cards — implemented in this version.
-4. Pet-care checklist and more useful care information — planned.
-5. Final layout improvements, accessibility checks and GitHub Pages publishing — planned.
+1. Basic pages and navigation — completed.
+2. Single-question animal quiz — completed.
+3. Expanded animal guide and responsive cards — completed.
+4. Lifestyle matching quiz, seven animal profiles and saved preparation checklist — implemented in this version.
+5. Final layout review, accessibility checks and GitHub Pages publishing — planned.
 
-Each stage should represent real work that has been reviewed and tested.
+## What changed in stage four
 
-## 中文说明
+- Six questions about activities, interaction, routine, housing, noise and care readiness.
+- Seven possible profiles: cats, dogs, rabbits, hamsters, guinea pigs, budgies and aquarium fish.
+- Results include matching answers, real care requirements and a link to the relevant animal profile.
+- Ties are shown together. Incomplete answers receive a message and keyboard focus.
+- Changing an answer clears stale results. Start again clears all choices.
+- Unsuitable housing or incomplete care plans lead to preparation advice, not a forced match.
+- A six-item pet preparation checklist saves in the current browser, shows progress and can be cleared.
+- If storage is blocked or saved data is damaged, the checklist still works without crashing.
 
-第三阶段完善了动物介绍页：保留猫和狗，新增兔子和仓鼠。每张卡片都有介绍、活动示例和照顾建议。页面还链接到照顾指南、小测验和 RSPCA 的资料入口，方便继续阅读。
+## 中文讲解
 
-这次修改涉及三个文件：
+这次把“知识题判对错”改成“性格与生活习惯匹配”，并完成原定的照顾清单。网页保持英文，代码保持普通 HTML、CSS、JavaScript，方便自己阅读和解释。
 
-- `animals.html`：四种动物的内容和卡片结构。
-- `styles.css`：卡片样式和小屏幕单列布局。
-- `README.md`：当前进度和后续计划。
+### 测试如何给出结果
 
-可以打开动物页，把浏览器窗口缩窄，观察卡片从两列变成一列；再点击照顾指南和测验链接，检查导航。
+quiz.js 中的 pets 数组保存七种动物的需求和偏好。findMatches 先检查是否答完、是否有准备好长期照顾和合适空间，再比较活动、互动、作息、空间和声音偏好。每个相符的维度加一分，至少三项相符才给出匹配；最高分相同的动物一起展示，不编造精确百分比。
 
-代码讲解：`section` 将每种动物的内容分组，`aria-labelledby` 指向该卡片的标题；CSS Grid 负责两列布局，`@media (max-width: 600px)` 让窄屏改成一列。装饰性的表情符号使用 `aria-hidden`，避免读屏器重复朗读。
+房屋条件是筛选条件，不能被性格分数抵消：鱼需要合适鱼缸，猫、狗、兔子和虎皮鹦鹉需要合适房间活动空间。只在白天陪伴时排除仓鼠；特别需要安静时排除虎皮鹦鹉。这只是简单的课堂匹配规则，不是专业养宠评估。具体动物性格、过敏、房东规定、预算和专业照顾要求仍须自己确认。
 
-本次提交说明：`Expand animal guide with responsive cards`。
+使用 fieldset 和 legend 为每题分组，label 让文字也能点击。缺题时提示并聚焦第一道未答题；结果出现后聚焦结果标题。修改答案会隐藏旧结果，避免误读。
 
-第四、第五阶段目前是计划；后续完成实际修改并检查后再提交。
+### 清单如何保存
+
+care.js 使用 localStorage 存储各项的勾选状态。它是养宠前准备清单，不是每天自动重置的任务表；刷新会保留状态，点击 Clear checklist 才清空。没有把内容上传到服务器。try/catch 用于处理禁止存储或损坏的数据；遇到问题会显示无法保存的提示，勾选仍然可用。
+
+### 你可以自己检查
+
+1. 在 Pet match 页先不选答案直接提交，应提示答完六题。
+2. 答完后查看结果理由和照顾需求，再打开结果中的动物介绍链接。
+3. 选择“还没准备好”或“暂时没有空间”，应得到先准备的建议。
+4. 更改答案或点击 Start again，旧结果应消失。
+5. 在 Pet care 页勾选清单，刷新确认恢复，清空后再次刷新确认清空。
+6. 缩窄浏览器至手机尺寸，检查文字、选项和按钮。
+
+建议第四次提交说明：Add lifestyle pet matching and saved care checklist
+
+第五阶段的最终排版和网站发布尚未完成。

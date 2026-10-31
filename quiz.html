@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Quiz | Little Paws</title>
+  <title>Find your animal match | Little Paws</title>
   <link rel="stylesheet" href="styles.css">
   <script src="quiz.js" defer></script>
 </head>
@@ -15,34 +15,68 @@
       <a href="index.html">Home</a>
       <a href="animals.html">Animals</a>
       <a href="care.html">Pet care</a>
-      <a href="quiz.html" aria-current="page">Quiz</a>
+      <a href="quiz.html" aria-current="page">Pet match</a>
     </nav>
   </header>
 
   <main id="main">
-    <h1>Animal quiz</h1>
-    <p>Pick an answer and check what you know about cats and dogs.</p>
-
-    <form class="quiz-card" id="animal-quiz">
+    <h1>Find your animal match</h1>
+    <p>Are you an outdoor adventurer, a gentle companion or a quiet observer? Answer six questions about your personality and daily habits.</p>
+    <p class="info-note">This is a fun guide to animals worth researching, not a scientific personality test or a decision to adopt. Individual animals differ, and practical care needs come first.</p>
+    <p id="quiz-progress" role="status">0 of 6 questions answered</p>
+    <form class="quiz-card match-form" id="animal-quiz" novalidate>
       <fieldset>
-        <legend>Which pet often likes climbing and resting in high places?</legend>
-
-        <label class="quiz-option">
-          <input type="radio" name="answer" value="cat">
-          <span>A cat</span>
-        </label>
-
-        <label class="quiz-option">
-          <input type="radio" name="answer" value="dog">
-          <span>A dog</span>
-        </label>
+        <legend>1. How do you most enjoy your free time?</legend>
+        <label class="quiz-option"><input type="radio" name="activity" value="outdoor" required> <span>Going for walks and spending time outdoors.</span></label>
+        <label class="quiz-option"><input type="radio" name="activity" value="play" required> <span>Playing games or learning something together.</span></label>
+        <label class="quiz-option"><input type="radio" name="activity" value="calm" required> <span>Relaxing with a calm companion nearby.</span></label>
+        <label class="quiz-option"><input type="radio" name="activity" value="observe" required> <span>Watching animals and learning about their habits.</span></label>
       </fieldset>
-
-      <button class="quiz-button" type="submit">Check my answer</button>
-      <p class="quiz-result" id="quiz-result" role="status" aria-live="polite">Your answer will appear here.</p>
+      <fieldset>
+        <legend>2. What kind of connection appeals to you?</legend>
+        <label class="quiz-option"><input type="radio" name="company" value="gentle" required> <span>Gentle company, while respecting the animal&#x27;s boundaries.</span></label>
+        <label class="quiz-option"><input type="radio" name="company" value="ground" required> <span>Quiet floor-level interaction without picking the animal up.</span></label>
+        <label class="quiz-option"><input type="radio" name="company" value="training" required> <span>Daily interaction and patient training.</span></label>
+        <label class="quiz-option"><input type="radio" name="company" value="watch" required> <span>Mostly watching; I do not need to hold my pet.</span></label>
+      </fieldset>
+      <fieldset>
+        <legend>3. When could you spend time with your pet?</legend>
+        <label class="quiz-option"><input type="radio" name="routine" value="day" required> <span>Mostly during the daytime.</span></label>
+        <label class="quiz-option"><input type="radio" name="routine" value="evening" required> <span>Mostly in the evening, with daily care still covered.</span></label>
+        <label class="quiz-option"><input type="radio" name="routine" value="flexible" required> <span>I can adapt my routine throughout the day.</span></label>
+      </fieldset>
+      <fieldset>
+        <legend>4. Which setup could you realistically provide?</legend>
+        <label class="quiz-option"><input type="radio" name="space" value="room" required> <span>A pet-safe room, with suitable exercise or flight space.</span></label>
+        <label class="quiz-option"><input type="radio" name="space" value="enclosure" required> <span>Space for a large enclosure and a suitable exercise area.</span></label>
+        <label class="quiz-option"><input type="radio" name="space" value="aquarium" required> <span>Space and budget for a properly sized, maintained aquarium.</span></label>
+        <label class="quiz-option"><input type="radio" name="space" value="none" required> <span>I do not yet have space for a suitable habitat.</span></label>
+      </fieldset>
+      <fieldset>
+        <legend>5. How do you feel about animal sounds?</legend>
+        <label class="quiz-option"><input type="radio" name="sound" value="quiet" required> <span>A quiet household is very important to me.</span></label>
+        <label class="quiz-option"><input type="radio" name="sound" value="some" required> <span>Some squeaks, digging or occasional calls are fine.</span></label>
+        <label class="quiz-option"><input type="radio" name="sound" value="lively" required> <span>I am comfortable with a lively, vocal companion.</span></label>
+      </fieldset>
+      <fieldset>
+        <legend>6. Can you cover daily care and long-term costs?</legend>
+        <label class="quiz-option"><input type="radio" name="readiness" value="ready" required> <span>Yes: daily care, proper housing, vet costs and backup care are planned.</span></label>
+        <label class="quiz-option"><input type="radio" name="readiness" value="learning" required> <span>Not yet. I am still exploring or cannot commit right now.</span></label>
+      </fieldset>
+      <div class="button-row">
+        <button class="quiz-button" type="submit">Find my match</button>
+        <button class="secondary-button" type="reset">Start again</button>
+      </div>
+      <p id="quiz-message" role="status" aria-live="polite"></p>
     </form>
+    <noscript><p>Please enable JavaScript to calculate your match, or browse the <a href="animals.html">animal guide</a>.</p></noscript>
 
-    <p><a href="animals.html">Read the animal guide for more information.</a></p>
+    <section class="match-result" id="match-result" aria-labelledby="result-title" hidden>
+      <h2 id="result-title" tabindex="-1"></h2>
+      <p id="result-summary"></p>
+      <div id="match-cards" class="animal-grid"></div>
+      <p><a href="care.html#care-checklist">Work through the pet-ready checklist</a> before making any decision.</p>
+    </section>
   </main>
 
   <footer>

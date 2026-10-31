@@ -141,13 +141,7 @@ a:focus-visible {
   font-weight: bold;
 }
 
-.quiz-result.correct {
-  color: #245139;
-}
 
-.quiz-result.incorrect {
-  color: #984522;
-}
 
 @media (max-width: 480px) {
   .quiz-card {
@@ -198,3 +192,32 @@ a:focus-visible {
     grid-template-columns: 1fr;
   }
 }
+
+/* Fourth stage: lifestyle matching and pet-care preparation. */
+[hidden] { display: none !important; }
+.match-form { max-width: 720px; }
+.match-form fieldset { min-width: 0; margin-bottom: 24px; }
+.match-form legend { max-width: 100%; }
+.quiz-option:has(input:checked) { background-color: #e9f1e9; border-color: #31684d; }
+.quiz-option input, .check-row input { flex-shrink: 0; width: 18px; height: 18px; }
+.button-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+.button-row .quiz-button { margin: 0; }
+.secondary-button {
+  padding: 10px 16px; border: 1px solid #31684d; border-radius: 7px;
+  color: #245139; background: white; font: inherit; cursor: pointer;
+}
+.secondary-button:hover { background: #e9f1e9; }
+button:focus-visible, input:focus-visible, #result-title:focus-visible {
+  outline: 3px solid #b56718; outline-offset: 3px;
+}
+.info-note, .checklist-card {
+  padding: 20px; border: 1px solid #dfe6dc; border-radius: 12px; background: white;
+}
+.match-result { margin: 28px 0; }
+.match-result .animal-grid { grid-template-columns: 1fr; }
+.match-result .animal-card p { overflow-wrap: anywhere; }
+.check-row { display: flex; align-items: flex-start; gap: 12px; padding: 14px 0; border-bottom: 1px solid #dfe6dc; cursor: pointer; }
+.check-row input { margin-top: 4px; accent-color: #31684d; }
+#care-progress { display: block; width: 100%; margin-top: 8px; accent-color: #31684d; }
+#care-items { margin-bottom: 20px; }
+.small-note { color: #45564c; font-size: 0.9rem; }
