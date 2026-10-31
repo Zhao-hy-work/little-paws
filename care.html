@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Pet care | Little Paws</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="care.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -14,21 +15,52 @@
       <a href="index.html">Home</a>
       <a href="animals.html">Animals</a>
       <a href="care.html" aria-current="page">Pet care</a>
-      <a href="quiz.html">Quiz</a>
+      <a href="quiz.html">Pet match</a>
     </nav>
   </header>
 
   <main id="main">
-    <h1>Basic pet care</h1>
-    <p>A pet needs care every day, not just when we want to play.</p>
+    <h1>A little planning, a kinder home</h1>
+    <p>Every animal needs daily care, even on your busiest days. Use this guide to plan before you bring a pet home.</p>
+    <div class="animal-grid">
+      <section class="animal-card">
+        <h2>Everyday care</h2>
+        <ul>
+          <li>Provide fresh water and food suitable for the species.</li>
+          <li>Check appetite, behaviour and the living area each day.</li>
+          <li>Plan cleaning, enrichment, exercise and rest around the animal's needs.</li>
+        </ul>
+      </section>
+      <section class="animal-card">
+        <h2>Plan for the long term</h2>
+        <ul>
+          <li>Budget for housing, food, supplies and routine and emergency veterinary care.</li>
+          <li>Check your household's agreement, housing rules and possible allergies.</li>
+          <li>Choose a reliable carer for holidays, illness and busy periods.</li>
+        </ul>
+      </section>
+    </div>
+    <p>Ask a vet experienced with your chosen species about health questions. If an animal stops eating or suddenly behaves differently, seek professional advice promptly.</p>
 
-    <h2>A few things to remember</h2>
-    <ul>
-      <li>Provide fresh water and food suitable for the animal.</li>
-      <li>Keep the living area safe and clean.</li>
-      <li>Make time for exercise, rest and gentle attention.</li>
-    </ul>
-    <p>Each animal has its own needs. Ask a vet or a trusted animal-care organisation for detailed advice.</p>
+    <section class="checklist-card" id="care-checklist" aria-labelledby="checklist-title">
+      <h2 id="checklist-title">My pet-ready checklist</h2>
+      <p>This is a preparation list, not a daily care schedule. When browser storage is available, your ticks stay on this device until you clear them.</p>
+      <div id="care-items">
+        <label class="check-row"><input type="checkbox" id="care-research"> <span>I have researched the species, lifespan and social needs.</span></label>
+        <label class="check-row"><input type="checkbox" id="care-home"> <span>I can provide a suitable habitat, exercise and enrichment.</span></label>
+        <label class="check-row"><input type="checkbox" id="care-time"> <span>I have time for daily feeding, cleaning and interaction.</span></label>
+        <label class="check-row"><input type="checkbox" id="care-budget"> <span>I have planned ongoing costs and found an appropriate vet.</span></label>
+        <label class="check-row"><input type="checkbox" id="care-household"> <span>My household and housing rules allow this pet; allergies have been considered.</span></label>
+        <label class="check-row"><input type="checkbox" id="care-backup"> <span>I have arranged backup care for holidays and emergencies.</span></label>
+      </div>
+      <label for="care-progress">Preparation progress</label>
+      <progress id="care-progress" max="6" value="0">0 of 6</progress>
+      <p id="care-status" role="status" aria-live="polite">0 of 6 items checked.</p>
+      <p id="storage-note" class="small-note"></p>
+      <button class="secondary-button" id="clear-checklist" type="button" hidden>Clear checklist</button>
+      <noscript><p>You can tick this list, but saving and the progress count need JavaScript.</p></noscript>
+    </section>
+    <p><a href="quiz.html">Explore your animal match</a> or read the <a href="animals.html">animal guide</a>.</p>
   </main>
 
   <footer>
