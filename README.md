@@ -70,3 +70,22 @@ care.js 使用 localStorage 存储各项的勾选状态。它是养宠前准备�
 建议第四次提交说明：Add lifestyle pet matching and saved care checklist
 
 第五阶段的这一版已完成，后续可以根据检查结果继续修改。开发阶段和 Git 提交次数不一定一一对应，之前的补充提交也会保留在历史中。
+
+## Later local preview: animal guide and photos
+
+- The Animals page now uses short clickable animal cards. Each one opens its own HTML detail page.
+- The quiz result links directly to the matching animal detail page.
+- All seven animal cards now use real photos, including guinea pigs and aquarium fish.
+- The Home page automatically cycles through all seven photos every 3.5 seconds, even if the pointer rests over it. Previous, Next and Pause buttons let visitors control the slideshow. Automatic movement stops when the page is hidden, a slide link has keyboard focus, or reduced motion is requested.
+- Dog, rabbit, hamster and budgie photos came from Pixabay's public photo search. The guinea-pig and fish photos came from publicly accessible GitHub projects; check the source project's image rights before reuse beyond this classroom project.
+
+Photo URLs:
+
+- Dog: https://cdn.pixabay.com/photo/2019/05/28/05/47/puppy-4234435_1280.jpg
+- Rabbit: https://cdn.pixabay.com/photo/2022/12/12/17/59/bunny-7651591_1280.jpg
+- Hamster: https://cdn.pixabay.com/photo/2018/02/17/17/50/cute-3160464_1280.jpg
+- Budgie: https://cdn.pixabay.com/photo/2016/05/09/20/08/budgie-1382376_1280.jpg
+- Guinea pigs: https://github.com/agatharbrito/guinea-pigs/blob/main/src/assets/guineapig.jpeg
+- Aquarium fish: https://github.com/Ale-Jez/Aqua-Shop/blob/main/media/products/angel.jpg
+
+本次改动：animals.html 只显示简短卡片；animal-*.html 是七个动物的详情页。index.html 的轮播图片由 carousel.js 每 3.5 秒自动切换，styles.css 设置排版和手机布局。豚鼠和鱼都改为实拍照片，图片文件保存在 images 文件夹中。

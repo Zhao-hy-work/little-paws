@@ -332,7 +332,7 @@ if (typeof document !== "undefined") {
         card.append(list);
         addParagraph(card, "Care to plan for:", pet.needs);
         const link = document.createElement("a");
-        link.href = "animals.html#" + pet.id;
+        link.href = "animal-" + pet.id + ".html";
         link.textContent = "Read more about " + pet.title.toLowerCase();
         card.append(link);
         cards.append(card);

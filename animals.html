@@ -23,62 +23,80 @@
 
   <main id="main" tabindex="-1">
     <div class="page-intro">
-    <h1>Meet the animals</h1>
-    <p>Seven different animal friends, seven different ways of sharing your home. Explore their personalities and the care they need.</p>
+      <h1>Meet the animals</h1>
+      <p>Choose an animal to read its own guide. Each card opens a page with the care it needs.</p>
     </div>
-
-    <nav class="animal-links" aria-label="Animals on this page">
-      <a href="#cat">Cats</a>
-      <a href="#dog">Dogs</a>
-      <a href="#rabbit">Rabbits</a>
-      <a href="#hamster">Hamsters</a>
-      <a href="#guinea-pig">Guinea pigs</a>
-      <a href="#budgie">Budgies</a>
-      <a href="#fish">Fish</a>
-    </nav>
-    <div class="animal-grid">
-      <section class="animal-card" id="cat" aria-labelledby="cat-title">
-        <span class="animal-icon" aria-hidden="true">🐱</span>
-        <h2 id="cat-title">Cats</h2>
-        <p>A curious companion for someone who enjoys quiet company and short play sessions.</p>
-        <p><strong>Before bringing one home:</strong> Daily play, clean litter trays, scratching and climbing spaces, and a quiet retreat. Cats need attention and long-term veterinary care.</p>
-      </section>
-      <section class="animal-card" id="dog" aria-labelledby="dog-title">
-        <span class="animal-icon" aria-hidden="true">🐶</span>
-        <h2 id="dog-title">Dogs</h2>
-        <p>An active companion for someone who enjoys walks, training and sharing a daily routine.</p>
-        <p><strong>Before bringing one home:</strong> Daily walks suited to age and health, reward-based training, company and a safe home. Arrange care when you are away; a garden does not replace walks.</p>
-      </section>
-      <section class="animal-card" id="rabbit" aria-labelledby="rabbit-title">
-        <span class="animal-icon" aria-hidden="true">🐰</span>
-        <h2 id="rabbit-title">Rabbits</h2>
-        <p>Gentle explorers for someone who likes patient, floor-level interaction.</p>
-        <p><strong>Before bringing one home:</strong> A suitable bonded rabbit companion, a large safe living and exercise area, plenty of hay, rabbit-proofing and rabbit-experienced veterinary care. Many dislike being picked up.</p>
-      </section>
-      <section class="animal-card" id="hamster" aria-labelledby="hamster-title">
-        <span class="animal-icon" aria-hidden="true">🐹</span>
-        <h2 id="hamster-title">Hamsters</h2>
-        <p>A small evening explorer for someone who likes quietly observing busy animals.</p>
-        <p><strong>Before bringing one home:</strong> A large, well-designed enclosure, deep suitable bedding and an appropriately sized wheel. Let it sleep during the day. Syrian hamsters must live alone; wheel and digging sounds may disturb sleep.</p>
-      </section>
-      <section class="animal-card" id="guinea-pig" aria-labelledby="guinea-pig-title">
-        <span class="animal-icon" aria-hidden="true">🐹</span>
-        <h2 id="guinea-pig-title">Guinea pigs</h2>
-        <p>Social little companions for someone who enjoys gentle interaction and a regular routine.</p>
-        <p><strong>Before bringing one home:</strong> A compatible guinea-pig companion, a spacious enclosure and exercise area, hay, suitable vitamin-C-rich food and daily cleaning. They can be vocal and need gentle handling.</p>
-      </section>
-      <section class="animal-card" id="budgie" aria-labelledby="budgie-title">
-        <span class="animal-icon" aria-hidden="true">🐦</span>
-        <h2 id="budgie-title">Budgies</h2>
-        <p>Lively birds for someone who enjoys sound, patient training and social interaction.</p>
-        <p><strong>Before bringing one home:</strong> Suitable bird companionship, a spacious flight cage and safe daily flight time, enrichment and an avian vet. Budgies are vocal; fumes, unsafe windows and other household hazards need attention.</p>
-      </section>
-      <section class="animal-card" id="fish" aria-labelledby="fish-title">
-        <span class="animal-icon" aria-hidden="true">🐠</span>
-        <h2 id="fish-title">Aquarium fish</h2>
-        <p>An observation-based hobby for someone who enjoys calm routines and learning about habitats.</p>
-        <p><strong>Before bringing one home:</strong> Choose a species first, then a suitably sized, cycled and filtered aquarium. Research temperature and social needs, test water and do regular maintenance. A small bowl is not a suitable shortcut.</p>
-      </section>
+    <div class="pet-tile-grid">
+      <article class="pet-tile" id="cat">
+        <a class="pet-tile-link" href="animal-cat.html" aria-label="Read about Cats">
+          <img class="pet-tile-image" src="cat.jpg" alt="A black and white cat looking over a wooden ledge" width="640" height="430" loading="lazy">
+          <span class="pet-tile-body">
+            <span class="pet-tile-title">Cats</span>
+            <span>A curious companion for someone who enjoys quiet company and short play sessions.</span>
+            <span class="pet-tile-more">Read the guide &rarr;</span>
+          </span>
+        </a>
+      </article>
+      <article class="pet-tile" id="dog">
+        <a class="pet-tile-link" href="animal-dog.html" aria-label="Read about Dogs">
+          <img class="pet-tile-image" src="images/dog.jpg" alt="A small white puppy sitting outside" width="640" height="430" loading="lazy">
+          <span class="pet-tile-body">
+            <span class="pet-tile-title">Dogs</span>
+            <span>An active companion for someone who enjoys walks, training and sharing a daily routine.</span>
+            <span class="pet-tile-more">Read the guide &rarr;</span>
+          </span>
+        </a>
+      </article>
+      <article class="pet-tile" id="rabbit">
+        <a class="pet-tile-link" href="animal-rabbit.html" aria-label="Read about Rabbits">
+          <img class="pet-tile-image" src="images/rabbit.jpg" alt="A white rabbit sitting outdoors" width="640" height="430" loading="lazy">
+          <span class="pet-tile-body">
+            <span class="pet-tile-title">Rabbits</span>
+            <span>Gentle explorers for someone who likes patient, floor-level interaction.</span>
+            <span class="pet-tile-more">Read the guide &rarr;</span>
+          </span>
+        </a>
+      </article>
+      <article class="pet-tile" id="hamster">
+        <a class="pet-tile-link" href="animal-hamster.html" aria-label="Read about Hamsters">
+          <img class="pet-tile-image" src="images/hamster.jpg" alt="A white hamster beside its enclosure" width="640" height="430" loading="lazy">
+          <span class="pet-tile-body">
+            <span class="pet-tile-title">Hamsters</span>
+            <span>A small evening explorer for someone who likes quietly observing busy animals.</span>
+            <span class="pet-tile-more">Read the guide &rarr;</span>
+          </span>
+        </a>
+      </article>
+      <article class="pet-tile" id="guinea-pig">
+        <a class="pet-tile-link" href="animal-guinea-pig.html" aria-label="Read about Guinea pigs">
+          <img class="pet-tile-image" src="images/guinea-pig.jpg" alt="Two guinea pigs sitting together" width="445" height="445" loading="lazy">
+          <span class="pet-tile-body">
+            <span class="pet-tile-title">Guinea pigs</span>
+            <span>Social little companions for someone who enjoys gentle interaction and a regular routine.</span>
+            <span class="pet-tile-more">Read the guide &rarr;</span>
+          </span>
+        </a>
+      </article>
+      <article class="pet-tile" id="budgie">
+        <a class="pet-tile-link" href="animal-budgie.html" aria-label="Read about Budgies">
+          <img class="pet-tile-image" src="images/budgie.jpg" alt="A green and yellow budgie" width="640" height="430" loading="lazy">
+          <span class="pet-tile-body">
+            <span class="pet-tile-title">Budgies</span>
+            <span>Lively birds for someone who enjoys sound, patient training and social interaction.</span>
+            <span class="pet-tile-more">Read the guide &rarr;</span>
+          </span>
+        </a>
+      </article>
+      <article class="pet-tile" id="fish">
+        <a class="pet-tile-link" href="animal-fish.html" aria-label="Read about Aquarium fish">
+          <img class="pet-tile-image" src="images/fish.jpg" alt="A striped angelfish swimming among aquarium plants" width="600" height="490" loading="lazy">
+          <span class="pet-tile-body">
+            <span class="pet-tile-title">Aquarium fish</span>
+            <span>An observation-based hobby for someone who enjoys calm routines and learning about habitats.</span>
+            <span class="pet-tile-more">Read the guide &rarr;</span>
+          </span>
+        </a>
+      </article>
     </div>
     <section class="animal-next-steps" aria-labelledby="learn-more-title">
       <h2 id="learn-more-title">Learn before choosing a pet</h2>

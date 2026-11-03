@@ -6,6 +6,7 @@
   <title>Home | Little Paws</title>
   <meta name="description" content="Meet seven animal companions, explore simple pet-care advice and find an animal that might suit your lifestyle.">
   <link rel="stylesheet" href="styles.css">
+  <script src="carousel.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -33,10 +34,44 @@
           <a class="secondary-button" href="animals.html">Meet the animals</a>
         </div>
       </div>
-      <figure class="hero-photo">
-        <img src="cat.jpg" alt="A black and white cat looking over a wooden ledge" width="600" height="413" fetchpriority="high">
-        <figcaption>Every animal has a personality. Every pet needs care.</figcaption>
-      </figure>
+      <div class="pet-carousel" aria-label="Pet photo slideshow">
+        <div class="carousel-photos">
+          <figure class="carousel-slide is-active" >
+            <img src="cat.jpg" alt="A black and white cat looking over a wooden ledge" width="640" height="430" fetchpriority="high">
+            <figcaption>Cats <a href="animal-cat.html">Meet cats &rarr;</a></figcaption>
+          </figure>
+          <figure class="carousel-slide" hidden>
+            <img src="images/dog.jpg" alt="A small white puppy sitting outside" width="640" height="430" loading="lazy">
+            <figcaption>Dogs <a href="animal-dog.html">Meet dogs &rarr;</a></figcaption>
+          </figure>
+          <figure class="carousel-slide" hidden>
+            <img src="images/rabbit.jpg" alt="A white rabbit sitting outdoors" width="640" height="430" loading="lazy">
+            <figcaption>Rabbits <a href="animal-rabbit.html">Meet rabbits &rarr;</a></figcaption>
+          </figure>
+          <figure class="carousel-slide" hidden>
+            <img src="images/hamster.jpg" alt="A white hamster beside its enclosure" width="640" height="430" loading="lazy">
+            <figcaption>Hamsters <a href="animal-hamster.html">Meet hamsters &rarr;</a></figcaption>
+          </figure>
+          <figure class="carousel-slide" hidden>
+            <img src="images/guinea-pig.jpg" alt="Two guinea pigs sitting together" width="445" height="445" loading="lazy">
+            <figcaption>Guinea pigs <a href="animal-guinea-pig.html">Meet guinea pigs &rarr;</a></figcaption>
+          </figure>
+          <figure class="carousel-slide" hidden>
+            <img src="images/budgie.jpg" alt="A green and yellow budgie" width="640" height="430" loading="lazy">
+            <figcaption>Budgies <a href="animal-budgie.html">Meet budgies &rarr;</a></figcaption>
+          </figure>
+          <figure class="carousel-slide" hidden>
+            <img src="images/fish.jpg" alt="A striped angelfish swimming among aquarium plants" width="600" height="490" loading="lazy">
+            <figcaption>Aquarium fish <a href="animal-fish.html">Meet aquarium fish &rarr;</a></figcaption>
+          </figure>
+        </div>
+        <div class="carousel-controls">
+          <button type="button" id="carousel-prev" aria-label="Previous photo">&larr;</button>
+          <span id="carousel-count" aria-live="off">1 of 7</span>
+          <button type="button" id="carousel-next" aria-label="Next photo">&rarr;</button>
+          <button type="button" id="carousel-toggle" aria-pressed="false">Pause</button>
+        </div>
+      </div>
     </section>
 
     <section class="home-explore" aria-labelledby="explore-title">
