@@ -4,24 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Pet care | Little Paws</title>
+  <meta name="description" content="Plan a caring home with everyday pet-care tips and a preparation checklist that saves in your browser.">
   <link rel="stylesheet" href="styles.css">
   <script src="care.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <header>
-    <p class="site-name">Little Paws</p>
-    <nav aria-label="Main navigation">
-      <a href="index.html">Home</a>
-      <a href="animals.html">Animals</a>
-      <a href="care.html" aria-current="page">Pet care</a>
-      <a href="quiz.html">Pet match</a>
-    </nav>
+  <header id="top" tabindex="-1">
+    <div class="header-inner">
+      <p class="site-name"><a href="index.html">Little Paws</a></p>
+      <nav aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="animals.html">Animals</a>
+        <a href="care.html" aria-current="page">Pet care</a>
+        <a href="quiz.html">Pet match</a>
+      </nav>
+    </div>
   </header>
 
-  <main id="main">
+  <main id="main" tabindex="-1">
+    <div class="page-intro">
     <h1>A little planning, a kinder home</h1>
     <p>Every animal needs daily care, even on your busiest days. Use this guide to plan before you bring a pet home.</p>
+    </div>
     <div class="animal-grid">
       <section class="animal-card">
         <h2>Everyday care</h2>
@@ -64,7 +69,13 @@
   </main>
 
   <footer>
-    <p>Little Paws — An animal guide</p>
+    <div class="footer-inner">
+      <div>
+        <p class="footer-title">Little Paws — An animal guide</p>
+        <p>Learn about animals. Plan a caring home.</p>
+      </div>
+      <a href="#top">Back to top &uarr;</a>
+    </div>
   </footer>
 </body>
 </html>

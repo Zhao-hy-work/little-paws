@@ -4,24 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Find your animal match | Little Paws</title>
+  <meta name="description" content="Answer six questions about your habits and available care to explore which animal companions might suit you.">
   <link rel="stylesheet" href="styles.css">
   <script src="quiz.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <header>
-    <p class="site-name">Little Paws</p>
-    <nav aria-label="Main navigation">
-      <a href="index.html">Home</a>
-      <a href="animals.html">Animals</a>
-      <a href="care.html">Pet care</a>
-      <a href="quiz.html" aria-current="page">Pet match</a>
-    </nav>
+  <header id="top" tabindex="-1">
+    <div class="header-inner">
+      <p class="site-name"><a href="index.html">Little Paws</a></p>
+      <nav aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="animals.html">Animals</a>
+        <a href="care.html">Pet care</a>
+        <a href="quiz.html" aria-current="page">Pet match</a>
+      </nav>
+    </div>
   </header>
 
-  <main id="main">
+  <main id="main" tabindex="-1">
+    <div class="page-intro">
     <h1>Find your animal match</h1>
     <p>Are you an outdoor adventurer, a gentle companion or a quiet observer? Answer six questions about your personality and daily habits.</p>
+    </div>
     <p class="info-note">This is a fun guide to animals worth researching, not a scientific personality test or a decision to adopt. Individual animals differ, and practical care needs come first.</p>
     <p id="quiz-progress" role="status">0 of 6 questions answered</p>
     <form class="quiz-card match-form" id="animal-quiz" novalidate>
@@ -80,7 +85,13 @@
   </main>
 
   <footer>
-    <p>Little Paws — An animal guide</p>
+    <div class="footer-inner">
+      <div>
+        <p class="footer-title">Little Paws — An animal guide</p>
+        <p>Learn about animals. Plan a caring home.</p>
+      </div>
+      <a href="#top">Back to top &uarr;</a>
+    </div>
   </footer>
 </body>
 </html>

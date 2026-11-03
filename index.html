@@ -4,33 +4,79 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Home | Little Paws</title>
+  <meta name="description" content="Meet seven animal companions, explore simple pet-care advice and find an animal that might suit your lifestyle.">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <header>
-    <p class="site-name">Little Paws</p>
-    <nav aria-label="Main navigation">
-      <a href="index.html" aria-current="page">Home</a>
-      <a href="animals.html">Animals</a>
-      <a href="care.html">Pet care</a>
-      <a href="quiz.html">Pet match</a>
-    </nav>
+  <header id="top" tabindex="-1">
+    <div class="header-inner">
+      <p class="site-name"><a href="index.html">Little Paws</a></p>
+      <nav aria-label="Main navigation">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="animals.html">Animals</a>
+        <a href="care.html">Pet care</a>
+        <a href="quiz.html">Pet match</a>
+      </nav>
+    </div>
   </header>
 
-  <main id="main">
-    <h1>Small paws. Big personalities.</h1>
-    <p>Welcome to Little Paws! This is a small website about pets and how to care for them.</p>
-    <img src="cat.jpg" alt="A black and white cat looking over a wooden ledge" width="600" height="413">
+  <main id="main" tabindex="-1">
+    <!-- The hero has two columns on a computer and one on a phone. -->
+    <section class="hero" aria-labelledby="welcome-title">
+      <div>
+        <p class="eyebrow">A little guide to animal friends</p>
+        <h1 id="welcome-title">Small paws.<br>Big personalities.</h1>
+        <p>Welcome to Little Paws! Meet different pets, learn what they need, and discover which companions might suit your everyday life.</p>
+        <div class="button-row">
+          <a class="primary-link" href="quiz.html">Find my animal match</a>
+          <a class="secondary-button" href="animals.html">Meet the animals</a>
+        </div>
+      </div>
+      <figure class="hero-photo">
+        <img src="cat.jpg" alt="A black and white cat looking over a wooden ledge" width="600" height="413" fetchpriority="high">
+        <figcaption>Every animal has a personality. Every pet needs care.</figcaption>
+      </figure>
+    </section>
 
-    <h2>What can you find here?</h2>
-    <p>Meet some popular pets, read a few care tips, and discover which animals might match your lifestyle.</p>
-    <p><a href="animals.html">Meet seven animal friends.</a></p>
-    <p><a href="quiz.html">Find your animal match</a> or use the <a href="care.html#care-checklist">pet-ready checklist</a>.</p>
+    <section class="home-explore" aria-labelledby="explore-title">
+      <p class="eyebrow">Take your first step</p>
+      <h2 id="explore-title">A good home starts with understanding</h2>
+      <div class="feature-grid">
+        <article class="animal-card">
+          <span class="step-number" aria-hidden="true">01</span>
+          <h3>Meet seven animal friends</h3>
+          <p>From curious cats to aquarium fish, compare different personalities and the homes they need.</p>
+          <a href="animals.html">Explore the animal guide &rarr;</a>
+        </article>
+        <article class="animal-card">
+          <span class="step-number" aria-hidden="true">02</span>
+          <h3>Think about your routine</h3>
+          <p>Answer six questions about your habits, space and care plans to discover possible matches.</p>
+          <a href="quiz.html">Try the pet match quiz &rarr;</a>
+        </article>
+        <article class="animal-card">
+          <span class="step-number" aria-hidden="true">03</span>
+          <h3>Prepare with care</h3>
+          <p>Read everyday care tips and use a saved checklist to plan time, costs and a suitable habitat.</p>
+          <a href="care.html#care-checklist">Open the preparation checklist &rarr;</a>
+        </article>
+      </div>
+    </section>
+    <aside class="info-note" aria-labelledby="home-reminder">
+      <h2 id="home-reminder">Small does not mean simple</h2>
+      <p>Every pet needs space, daily attention and long-term care. Learn about the species and speak with a reliable rescue or vet before choosing.</p>
+    </aside>
   </main>
 
   <footer>
-    <p>Little Paws — An animal guide</p>
+    <div class="footer-inner">
+      <div>
+        <p class="footer-title">Little Paws — An animal guide</p>
+        <p>Learn about animals. Plan a caring home.</p>
+      </div>
+      <a href="#top">Back to top &uarr;</a>
+    </div>
   </footer>
 </body>
 </html>

@@ -1,51 +1,47 @@
-/* Basic page styles for the first version. */
+/* Shared colours and page layout. No external fonts or libraries are needed. */
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  background-color: #f8f6ef;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f8f6ef;
   color: #23372e;
   font-family: Arial, sans-serif;
   line-height: 1.6;
 }
 
-header, footer {
-  padding: 20px;
-  background-color: #e9f1e9;
-}
-
-.site-name {
-  margin: 0 0 12px;
-  font-size: 24px;
-  font-weight: bold;
-}
-
-/* Wrapping keeps the links usable on a narrow screen. */
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
+[hidden] {
+  display: none !important;
 }
 
 a {
   color: #245139;
+  text-underline-offset: 4px;
 }
 
-nav a[aria-current="page"] {
-  font-weight: bold;
-  text-decoration-thickness: 3px;
+a:hover {
+  text-decoration-thickness: 2px;
 }
 
-main {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 28px 20px;
+h1, h2, h3 {
+  line-height: 1.25;
 }
 
-h1, h2 {
-  line-height: 1.3;
+h1 {
+  margin: 0 0 20px;
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.15rem;
 }
 
 img {
@@ -54,102 +50,169 @@ img {
   height: auto;
 }
 
-footer p {
-  margin: 0;
-  font-size: 14px;
+header, footer {
+  background: #e9f1e9;
 }
 
-/* Keyboard users can skip the navigation. */
+header {
+  border-bottom: 1px solid #cad7ca;
+}
+
+.header-inner, .footer-inner {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.site-name {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.site-name a {
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+header nav a {
+  padding: 10px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+header nav a:hover {
+  background: #dbe7da;
+}
+
+header nav a[aria-current="page"] {
+  color: white;
+  background: #31684d;
+  font-weight: bold;
+}
+
+main {
+  width: 100%;
+  max-width: 1040px;
+  flex: 1;
+  margin: 0 auto;
+  padding: 40px 20px 56px;
+}
+
+.page-intro {
+  max-width: 760px;
+  margin-bottom: 24px;
+}
+
+.page-intro p {
+  font-size: 1.1rem;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.footer-title {
+  font-weight: bold;
+}
+
+.footer-inner > a {
+  padding: 10px 0;
+}
+
+/* Keep visible outlines for people who navigate with the keyboard. */
+:focus-visible {
+  outline: 3px solid #9c4c0b;
+  outline-offset: 4px;
+}
+
 .skip-link {
   position: absolute;
   top: -100px;
   left: 12px;
-  padding: 8px;
-  background-color: white;
+  z-index: 1;
+  padding: 12px;
+  color: #23372e;
+  background: white;
 }
 
 .skip-link:focus {
   top: 8px;
 }
 
-a:focus-visible {
-  outline: 3px solid #b56718;
-  outline-offset: 4px;
-}
-/* Styles for the quiz added in the second version. */
-.quiz-card {
-  max-width: 560px;
-  margin: 20px 0;
-  padding: 20px;
-  border: 1px solid #dfe6dc;
-  border-radius: 12px;
-  background-color: #ffffff;
+[id] {
+  scroll-margin-top: 20px;
 }
 
-.quiz-card fieldset {
-  margin: 0;
-  padding: 0;
-  border: 0;
-}
-
-.quiz-card legend {
-  margin-bottom: 12px;
-  font-size: 1.1rem;
-  font-weight: bold;
-}
-
-.quiz-option {
-  display: flex;
+/* Homepage: a simple introduction and three next steps. */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
-  gap: 10px;
-  margin: 10px 0;
-  padding: 10px;
-  border: 1px solid #dfe6dc;
-  border-radius: 8px;
-  cursor: pointer;
+  gap: 32px;
+  padding: 12px 0 40px;
 }
 
-.quiz-option input {
-  accent-color: #31684d;
+.hero h1 {
+  font-size: 3rem;
 }
 
-.quiz-button {
+.eyebrow {
+  color: #455f4c;
+  font-size: 0.85rem;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.hero-photo {
+  min-width: 0;
+  margin: 0;
+}
+
+.hero-photo img {
+  width: 100%;
+  border-radius: 16px;
+}
+
+figcaption, .small-note {
+  color: #45564c;
+  font-size: 0.9rem;
+}
+
+figcaption {
   margin-top: 10px;
-  padding: 10px 16px;
-  border: 0;
-  border-radius: 7px;
-  background-color: #31684d;
-  color: #ffffff;
-  font: inherit;
-  font-weight: bold;
-  cursor: pointer;
 }
 
-.quiz-button:hover {
-  background-color: #245139;
+.home-explore {
+  margin: 12px 0 32px;
 }
 
-.quiz-button:focus-visible,
-.quiz-option input:focus-visible {
-  outline: 3px solid #b56718;
-  outline-offset: 3px;
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 24px;
 }
 
-.quiz-result {
-  min-height: 1.6em;
-  margin: 14px 0 0;
+.step-number {
+  color: #31684d;
+  font-size: 1.3rem;
   font-weight: bold;
 }
 
-
-
-@media (max-width: 480px) {
-  .quiz-card {
-    padding: 16px;
-  }
-}
-
-/* Animal profiles: two columns on larger screens, one on phones. */
+/* Animal cards and in-page links. */
 .animal-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -157,11 +220,16 @@ a:focus-visible {
   margin: 24px 0;
 }
 
-.animal-card {
-  padding: 20px;
-  border: 1px solid #dfe6dc;
+.animal-card, .quiz-card, .checklist-card, .info-note {
+  min-width: 0;
+  padding: 24px;
+  border: 1px solid #cad7ca;
   border-radius: 12px;
-  background-color: #ffffff;
+  background: white;
+}
+
+.animal-card p:last-child, .info-note p:last-child {
+  margin-bottom: 0;
 }
 
 .animal-icon {
@@ -180,44 +248,216 @@ a:focus-visible {
   margin-bottom: 8px;
 }
 
-.animal-next-steps {
-  margin-top: 28px;
-  padding: 20px;
-  border-radius: 12px;
-  background-color: #e9f1e9;
+.animal-links a {
+  padding: 9px 14px;
+  border: 1px solid #809780;
+  border-radius: 24px;
+  background: white;
 }
 
-@media (max-width: 600px) {
-  .animal-grid {
+.animal-links a:hover {
+  background: #e9f1e9;
+}
+
+.animal-card:target {
+  border-color: #31684d;
+  outline: 2px solid #31684d;
+  outline-offset: 3px;
+}
+
+.animal-next-steps {
+  margin-top: 28px;
+  padding: 24px;
+  border-radius: 12px;
+  background: #e9f1e9;
+}
+
+/* Shared buttons are large enough to tap on a phone. */
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.quiz-button, .primary-link, .secondary-button {
+  display: inline-block;
+  min-height: 44px;
+  padding: 10px 16px;
+  border: 1px solid #31684d;
+  border-radius: 8px;
+  font: inherit;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.quiz-button, .primary-link {
+  background: #31684d;
+  color: white;
+}
+
+.quiz-button:hover, .primary-link:hover {
+  background: #245139;
+}
+
+.secondary-button {
+  background: white;
+  color: #245139;
+}
+
+.secondary-button:hover {
+  background: #e9f1e9;
+}
+
+/* Quiz choices and result cards. */
+.quiz-card {
+  max-width: 760px;
+  margin: 20px 0;
+}
+
+.quiz-card fieldset {
+  min-width: 0;
+  margin: 0 0 28px;
+  padding: 0;
+  border: 0;
+}
+
+.quiz-card legend {
+  max-width: 100%;
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.quiz-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin: 10px 0;
+  padding: 12px;
+  border: 1px solid #809780;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.quiz-option:hover, .quiz-option:has(input:checked) {
+  background: #e9f1e9;
+}
+
+.quiz-option:has(input:checked) {
+  border-color: #31684d;
+}
+
+.quiz-option input, .check-row input {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin: 4px 0 0;
+  accent-color: #31684d;
+}
+
+#quiz-progress {
+  font-weight: bold;
+}
+
+#quiz-message:not(:empty) {
+  margin-bottom: 0;
+  padding: 12px;
+  border-left: 4px solid #9c4c0b;
+  background: #fff4e7;
+}
+
+.match-result {
+  margin: 32px 0;
+}
+
+.match-result .animal-grid {
+  grid-template-columns: 1fr;
+}
+
+.match-result .animal-card p {
+  overflow-wrap: anywhere;
+}
+
+/* Preparation checklist: saved by care.js in this browser. */
+.check-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 8px;
+  border-bottom: 1px solid #cad7ca;
+  cursor: pointer;
+}
+
+.check-row:has(input:checked) {
+  background: #e9f1e9;
+}
+
+#care-progress {
+  display: block;
+  width: 100%;
+  height: 16px;
+  margin-top: 8px;
+  accent-color: #31684d;
+}
+
+#care-items {
+  margin-bottom: 20px;
+}
+
+/* Stack the layouts on tablets and phones; no separate mobile menu needed. */
+@media (max-width: 760px) {
+  .hero, .feature-grid {
     grid-template-columns: 1fr;
+  }
+
+  .hero {
+    gap: 24px;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .header-inner {
+    align-items: flex-start;
+    flex-direction: column;
   }
 }
 
-/* Fourth stage: lifestyle matching and pet-care preparation. */
-[hidden] { display: none !important; }
-.match-form { max-width: 720px; }
-.match-form fieldset { min-width: 0; margin-bottom: 24px; }
-.match-form legend { max-width: 100%; }
-.quiz-option:has(input:checked) { background-color: #e9f1e9; border-color: #31684d; }
-.quiz-option input, .check-row input { flex-shrink: 0; width: 18px; height: 18px; }
-.button-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
-.button-row .quiz-button { margin: 0; }
-.secondary-button {
-  padding: 10px 16px; border: 1px solid #31684d; border-radius: 7px;
-  color: #245139; background: white; font: inherit; cursor: pointer;
+@media (max-width: 600px) {
+  main {
+    padding: 28px 16px 40px;
+  }
+
+  .header-inner, .footer-inner {
+    padding: 16px;
+  }
+
+  header nav {
+    width: 100%;
+    gap: 4px;
+  }
+
+  header nav a {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .animal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .animal-card, .quiz-card, .checklist-card, .info-note, .animal-next-steps {
+    padding: 18px;
+  }
+
+  .hero .button-row > a {
+    width: 100%;
+  }
 }
-.secondary-button:hover { background: #e9f1e9; }
-button:focus-visible, input:focus-visible, #result-title:focus-visible {
-  outline: 3px solid #b56718; outline-offset: 3px;
-}
-.info-note, .checklist-card {
-  padding: 20px; border: 1px solid #dfe6dc; border-radius: 12px; background: white;
-}
-.match-result { margin: 28px 0; }
-.match-result .animal-grid { grid-template-columns: 1fr; }
-.match-result .animal-card p { overflow-wrap: anywhere; }
-.check-row { display: flex; align-items: flex-start; gap: 12px; padding: 14px 0; border-bottom: 1px solid #dfe6dc; cursor: pointer; }
-.check-row input { margin-top: 4px; accent-color: #31684d; }
-#care-progress { display: block; width: 100%; margin-top: 8px; accent-color: #31684d; }
-#care-items { margin-bottom: 20px; }
-.small-note { color: #45564c; font-size: 0.9rem; }

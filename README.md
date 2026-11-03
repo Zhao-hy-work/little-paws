@@ -7,8 +7,19 @@ An English animal website made with plain HTML, CSS and JavaScript. Open index.h
 1. Basic pages and navigation — completed.
 2. Single-question animal quiz — completed.
 3. Expanded animal guide and responsive cards — completed.
-4. Lifestyle matching quiz, seven animal profiles and saved preparation checklist — implemented in this version.
-5. Final layout review, accessibility checks and GitHub Pages publishing — planned.
+4. Lifestyle matching quiz, seven animal profiles and saved preparation checklist — completed.
+5. Layout review and accessibility improvements — initial version completed; further revisions may follow.
+
+## What changed in stage five
+
+- A two-column home introduction with a local cat photo and three clear starting points.
+- Shared page widths, navigation, active-page styling, footer and back-to-top links.
+- Animal shortcut links with a highlighted destination card.
+- Responsive cards, wrapping navigation and larger touch targets for mobile screens.
+- Visible keyboard focus, working skip links and clearer option borders.
+- Descriptions for all four pages; the site still uses plain HTML, CSS and JavaScript.
+
+GitHub Pages was enabled after stage four. Updates pushed to main are published automatically. This fifth-stage version records the current layout; further improvements may follow.
 
 ## What changed in stage four
 
@@ -23,7 +34,17 @@ An English animal website made with plain HTML, CSS and JavaScript. Open index.h
 
 ## 中文讲解
 
-这次把“知识题判对错”改成“性格与生活习惯匹配”，并完成原定的照顾清单。网页保持英文，代码保持普通 HTML、CSS、JavaScript，方便自己阅读和解释。
+第四阶段把“知识题判对错”改成“性格与生活习惯匹配”，并完成照顾清单。第五阶段整理首页、导航和手机排版，并改善键盘操作。网页保持英文，代码保持普通 HTML、CSS、JavaScript，方便自己阅读和解释。
+
+### 第五阶段从哪里看代码
+
+- index.html：首页的 hero 区域放标题和照片；feature-grid 放三个入口卡片。
+- 四个 HTML 页面：header-inner 和 footer-inner 统一页眉页脚；aria-current 标出当前页面；description 简要说明页面内容。
+- animals.html：animal-links 中的 #cat 等链接跳到已有的动物卡片；CSS 的 :target 突出显示目标卡片。
+- styles.css：display: grid 控制分栏；@media 在窄屏下改为单列；:focus-visible 显示键盘焦点；按钮和导航有更大的点击区域。
+- quiz.js 和 care.js：继续使用第四阶段的匹配规则和清单保存逻辑。
+
+在 VS Code 中打开 web.homework，然后右键 index.html，选择 Open with Live Server（需要已安装 Live Server 扩展）。也可以直接在文件夹里双击 index.html 查看。本地预览会显示电脑中的最新修改；提交并上传到 main 后，GitHub Pages 会自动更新，通常需要稍等片刻。
 
 ### 测试如何给出结果
 
@@ -48,4 +69,4 @@ care.js 使用 localStorage 存储各项的勾选状态。它是养宠前准备�
 
 建议第四次提交说明：Add lifestyle pet matching and saved care checklist
 
-第五阶段的最终排版和网站发布尚未完成。
+第五阶段的这一版已完成，后续可以根据检查结果继续修改。开发阶段和 Git 提交次数不一定一一对应，之前的补充提交也会保留在历史中。
