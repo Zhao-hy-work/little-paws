@@ -89,3 +89,9 @@ Photo URLs:
 - Aquarium fish: https://github.com/Ale-Jez/Aqua-Shop/blob/main/media/products/angel.jpg
 
 本次改动：animals.html 只显示简短卡片；animal-*.html 是七个动物的详情页。index.html 的轮播图片由 carousel.js 每 3.5 秒自动切换，styles.css 设置排版和手机布局。豚鼠和鱼都改为实拍照片，图片文件保存在 images 文件夹中。
+
+## Expanded animal guides
+
+Each of the seven animal detail pages now has four sections: common types and appearance, feeding, home and daily care, and health signs. The examples are not endorsements of a breed. Food quantities depend on species, age, health and the product, so the pages avoid one-size-fits-all measurements. Each page links to further care reading. Updates pushed to main are published through GitHub Pages.
+
+七个 animal-*.html 详情页现在分别介绍常见类型及外貌、食物与喂法、居住和日常照顾、健康提醒。页面顶部的小导航可以直接跳到某个部分；样式写在 styles.css 末尾。品种只是常见例子，不代表更推荐某个品种。喂食份量需要按物种、年龄、健康状态和饲料说明调整。
