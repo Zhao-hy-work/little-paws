@@ -204,6 +204,94 @@ const pets = [
     "spaces": [
       "aquarium"
     ]
+  },
+  {
+    "id": "snake",
+    "title": "Snakes",
+    "match": "A corn snake",
+    "description": "A quiet, curious explorer for someone who enjoys observing reptiles and maintaining a carefully controlled habitat.",
+    "needs": "A secure, individually housed vivarium with thermostatic heating, suitable UVB, hides, fresh water, thawed whole-prey meals and a reptile vet. Check local ownership rules.",
+    "preferences": {
+      "activity": [
+        "observe",
+        "calm"
+      ],
+      "company": [
+        "watch"
+      ],
+      "routine": [
+        "evening",
+        "flexible"
+      ],
+      "space": [
+        "vivarium"
+      ],
+      "sound": [
+        "quiet"
+      ]
+    },
+    "spaces": [
+      "vivarium"
+    ]
+  },
+  {
+    "id": "hedgehog",
+    "title": "Hedgehogs",
+    "match": "An African pygmy hedgehog",
+    "description": "A little night-time explorer with a curious nose, for a patient keeper who can provide warmth and quiet daytime rest.",
+    "needs": "A warm, solitary enclosure, solid running wheel, hiding place, measured balanced food and an exotic-mammal vet. Night-time activity and local ownership rules matter.",
+    "preferences": {
+      "activity": [
+        "observe",
+        "calm"
+      ],
+      "company": [
+        "ground",
+        "watch"
+      ],
+      "routine": [
+        "evening",
+        "flexible"
+      ],
+      "space": [
+        "warm-enclosure"
+      ],
+      "sound": [
+        "some"
+      ]
+    },
+    "spaces": [
+      "warm-enclosure"
+    ]
+  },
+  {
+    "id": "turtle",
+    "title": "Turtles",
+    "match": "A common musk turtle",
+    "description": "A small aquatic explorer for someone who enjoys watching a miniature underwater world and caring for its water and lighting.",
+    "needs": "A dedicated filtered aquatic habitat, safe access to the surface, a dry basking area, heat and UVB, species-appropriate food and a reptile vet. A fish tank alone is not enough.",
+    "preferences": {
+      "activity": [
+        "observe"
+      ],
+      "company": [
+        "watch"
+      ],
+      "routine": [
+        "day",
+        "flexible"
+      ],
+      "space": [
+        "turtle-tank"
+      ],
+      "sound": [
+        "quiet",
+        "some"
+      ]
+    },
+    "spaces": [
+      "turtle-tank"
+    ]
   }
 ];
 
@@ -214,7 +302,7 @@ const allowedAnswers = {
   activity: ["outdoor", "play", "calm", "observe"],
   company: ["gentle", "ground", "training", "watch"],
   routine: ["day", "evening", "flexible"],
-  space: ["room", "enclosure", "aquarium", "none"],
+  space: ["room", "enclosure", "aquarium", "vivarium", "warm-enclosure", "turtle-tank", "none"],
   sound: ["quiet", "some", "lively"],
   readiness: ["ready", "learning"]
 };
@@ -229,7 +317,7 @@ function findMatches(answers) {
 
   const candidates = pets.filter((pet) =>
     pet.spaces.includes(answers.space) &&
-    !(pet.id === "hamster" && answers.routine === "day") &&
+    !(["hamster", "hedgehog"].includes(pet.id) && answers.routine === "day") &&
     !(pet.id === "budgie" && answers.sound === "quiet")
   );
 
@@ -306,7 +394,7 @@ if (typeof document !== "undefined") {
       summary.textContent = "It is fine to be curious without being ready. Work through the care checklist, plan a suitable habitat and budget, and arrange daily and backup care before choosing an animal.";
     } else if (outcome.type === "explore") {
       title.textContent = "No close match yet";
-      summary.textContent = "Your preferences and available setup do not closely match these seven profiles. Explore the animal guide and their actual care needs; you do not need to choose a pet now.";
+      summary.textContent = "Your preferences and available setup do not closely match these ten profiles. Explore the animal guide and their actual care needs; you do not need to choose a pet now.";
     } else {
       title.textContent = outcome.matches.length > 1
         ? "Your closest matches: a shared result"

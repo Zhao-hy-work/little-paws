@@ -552,3 +552,12 @@ figcaption {
 @media (max-width: 600px) {
   .guide-panel { padding: 18px; }
 }
+
+/* New friends: soft photo entrance; respect visitors who prefer less motion. */
+.pet-portrait { margin: 0; min-width: 0; }
+.photo-credit { font-size: .8rem; overflow-wrap: anywhere; }
+.pet-species { color: #455f4c; font-size: .9rem; }
+@media (prefers-reduced-motion: no-preference) {
+  .carousel-slide.is-active img { animation: photo-hello .65s ease-out; }
+  @keyframes photo-hello { from { opacity: .35; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+}

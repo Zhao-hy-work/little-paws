@@ -95,3 +95,9 @@ Photo URLs:
 Each of the seven animal detail pages now has four sections: common types and appearance, feeding, home and daily care, and health signs. The examples are not endorsements of a breed. Food quantities depend on species, age, health and the product, so the pages avoid one-size-fits-all measurements. Each page links to further care reading. Updates pushed to main are published through GitHub Pages.
 
 七个 animal-*.html 详情页现在分别介绍常见类型及外貌、食物与喂法、居住和日常照顾、健康提醒。页面顶部的小导航可以直接跳到某个部分；样式写在 styles.css 末尾。品种只是常见例子，不代表更推荐某个品种。喂食份量需要按物种、年龄、健康状态和饲料说明调整。
+
+## Ten animal friends
+
+Added corn snakes, African pygmy hedgehogs and common musk turtles. Their detail pages distinguish species, explain feeding and habitat needs, and link to the care sources consulted. The quiz keeps six questions but adds three dedicated habitat choices; hedgehogs are excluded for daytime-only availability. All ten animals appear in the automatic slideshow, with a short entrance animation when reduced motion is not requested.
+
+新增蛇、刺猬和龟：护理分别针对玉米蛇、非洲侏儒刺猬和普通麝香龟。题目仍为六道，第四题加入三种专用环境，避免把普通笼子或鱼缸误当作合适环境。详情页保留资料链接；新增照片来源及许可见 PHOTO-CREDITS.md。首页为实拍照片自动轮播加轻微入场动画，不是动物动作 GIF。猫咪照片已更换为布偶猫实拍照片。
